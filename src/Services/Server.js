@@ -23,7 +23,7 @@ export const makeServer = () => {
             .all("employee")
             .models.map((employee) => employee.attrs);
         },
-        { timing: 1500 },
+        { timing: 2300 },
       );
 
       this.put("/api/chartData/:id", (schema, request) => {
