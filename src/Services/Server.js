@@ -16,9 +16,15 @@ export const makeServer = () => {
     },
 
     routes() {
-      this.get("/api/chartData", (schema) => {
-        return schema.all("employee").models.map((employee) => employee.attrs);
-      });
+      this.get(
+        "/api/chartData",
+        (schema) => {
+          return schema
+            .all("employee")
+            .models.map((employee) => employee.attrs);
+        },
+        { timing: 1500 },
+      );
 
       this.put("/api/chartData/:id", (schema, request) => {
         const id = request.params.id;

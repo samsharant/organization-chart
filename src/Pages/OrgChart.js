@@ -16,6 +16,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import chartDataContext from "../Context/ChartDataContext";
 import FilterByTeam from "../Components/FilterByTeam";
 import ListItems from "../Components/ListItems";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 function OrgChart() {
   const { chartDataContextValue } = useContext(chartDataContext);
@@ -80,33 +81,49 @@ function OrgChart() {
     }
   }, [filterOptions, chartDataContextValue, isMatching]);
 
-  return chartDataContextValue?.length ? (
-    <div className="page-wrapper">
-      <div className="left-pane">
-        {/* search option*/}
-        <Search
-          filterOptions={filterOptions}
-          setFilterOptions={setFilterOptions}
-        />
+  return (
+    <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={!!!chartDataContextValue.length}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}>
+          <CircularProgress color="inherit" />
+          <div>Fetching Data...</div>
+        </div>
+      </Backdrop>
 
-        {/* dropdown to filter employees by team */}
-        <FilterByTeam
-          team={filterOptions.filterByTeam}
-          handleChange={handleDropdownChange}
-        />
+      {!!chartDataContextValue?.length && (
+        <div className="page-wrapper">
+          <div className="left-pane">
+            {/* search option*/}
+            <Search
+              filterOptions={filterOptions}
+              setFilterOptions={setFilterOptions}
+            />
 
-        {/* renders the list of employees */}
-        <ListItems data={chartData} />
-      </div>
+            {/* dropdown to filter employees by team */}
+            <FilterByTeam
+              team={filterOptions.filterByTeam}
+              handleChange={handleDropdownChange}
+            />
 
-      <div className="right-pane">
-        <DndProvider backend={HTML5Backend}>
-          <Chart teamToFilter={filterOptions.filterByTeam} />
-        </DndProvider>
-      </div>
-    </div>
-  ) : (
-    <div>fetching api...</div>
+            {/* renders the list of employees */}
+            <ListItems data={chartData} />
+          </div>
+
+          <div className="right-pane">
+            <DndProvider backend={HTML5Backend}>
+              <Chart teamToFilter={filterOptions.filterByTeam} />
+            </DndProvider>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
