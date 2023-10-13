@@ -45,13 +45,6 @@ Install dependencies(for front-end)
   npm install or yarn
 ```
 
-Start the app - Production
-
-```bash
-  npm run start:prod or yarn start:prod
-
-```
-
 Run unit tests(for front-end)
 
 ```bash
