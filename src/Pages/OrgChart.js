@@ -1,6 +1,8 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import Search from "../Components/Search";
 import Chart from "../Components/Chart";
+import Lottie from "lottie-react";
+import loading from "../LoadingAnimation.json";
 
 //utility
 import { fetchChartData } from "../Services/ChartDataService";
@@ -92,8 +94,12 @@ function OrgChart() {
             flexDirection: "column",
             alignItems: "center",
           }}>
-          <CircularProgress color="inherit" />
-          <div>Fetching Data...</div>
+          <Lottie
+            style={{ height: "200px", width: "200px" }}
+            loop
+            animationData={loading}
+          />
+          <div className="fetching-data-text">Fetching Data...</div>
         </div>
       </Backdrop>
 

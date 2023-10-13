@@ -24,6 +24,7 @@
   right: 0;
   top: 80px;
   margin: 0 10px;
+  opacity: 0.3;
 }
 
 .list-container {
@@ -47,4 +48,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fetching-data-text {
+  font-size: 14px;
+  position: relative;
+  top: -80px;
+  color: #242424;
 }
