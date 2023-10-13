@@ -23,21 +23,21 @@
   {
     "id": "hf004",
     "name": "sarah",
-    "designation": "chief accounting officer",
+    "designation": "Chief accounting officer",
     "team": "finance",
     "manager": "hf001"
   },
   {
     "id": "hf005",
     "name": "akilan",
-    "designation": "recruiter",
+    "designation": "Recruiter",
     "team": "business",
     "manager": "hf002"
   },
   {
     "id": "hf006",
     "name": "helen",
-    "designation": "intern",
+    "designation": "Intern",
     "team": "business",
     "manager": "hf002"
   },
@@ -51,21 +51,21 @@
   {
     "id": "hf008",
     "name": "sam",
-    "designation": "frontend engineer",
+    "designation": "Frontend engineer",
     "team": "product",
     "manager": "hf003"
   },
   {
     "id": "hf009",
     "name": "karan",
-    "designation": "backend engineer",
+    "designation": "Backend engineer",
     "team": "product",
     "manager": "hf003"
   },
   {
     "id": "hf0010",
     "name": "dinesh",
-    "designation": "tax assistant",
+    "designation": "Tax assistant",
     "team": "finance",
     "manager": "hf004"
   }
