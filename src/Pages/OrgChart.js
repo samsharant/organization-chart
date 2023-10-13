@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import Search from "../Components/Search";
-import Tile from "../Components/Tile";
 import Chart from "../Components/Chart";
 
 //utility
@@ -9,16 +8,12 @@ import { fetchChartData } from "../Services/ChartDataService";
 //style
 import "./OrgChart.css";
 
-//mui
-import { FormControl, MenuItem, Select } from "@mui/material";
-
 //dnd library
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 //context
 import chartDataContext from "../Context/ChartDataContext";
-import axios from "axios";
 import FilterByTeam from "../Components/FilterByTeam";
 import ListItems from "../Components/ListItems";
 

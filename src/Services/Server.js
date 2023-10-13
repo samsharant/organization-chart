@@ -23,7 +23,6 @@ export const makeServer = () => {
       this.put("/api/chartData/:id", (schema, request) => {
         const id = request.params.id;
         const updatedData = JSON.parse(request.requestBody);
-        console.log("data to be updated", updatedData);
         const employee = schema.find("employee", id);
         employee.update(updatedData);
         return employee;
