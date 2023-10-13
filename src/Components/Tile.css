@@ -1,0 +1,20 @@
+.tile-container {
+  width: 75%;
+  padding: 10px;
+  border-bottom: 1px solid #bfbfbf;
+  margin: 0 17px 0 0;
+}
+
+.tile-container .name-container {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.tile-container .additional-data-container {
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.tile-container .additional-data-container span {
+  display: block;
+}

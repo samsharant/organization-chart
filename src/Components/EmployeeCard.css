@@ -1,0 +1,30 @@
+.employee-card,
+.draggable-employee-card {
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  width: 130px;
+  height: 50px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  flex-wrap: wrap;
+}
+
+.employee-card .name-container,
+.draggable-employee-card .name-container {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.employee-card .designation-container,
+.draggable-employee-card .designation-container {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.dragging-card {
+  opacity: 0.5;
+}

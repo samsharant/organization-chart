@@ -1,0 +1,50 @@
+.page-wrapper {
+  height: 100vh;
+  display: flex;
+  background-color: black;
+}
+
+.left-pane {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-pane:after {
+  content: "";
+  background: rgb(185, 185, 185);
+  position: absolute;
+  bottom: 0;
+  height: 75%;
+  width: 1px;
+  right: 0;
+  top: 80px;
+  margin: 0 10px;
+}
+
+.list-container {
+  width: 100%;
+  position: relative;
+  right: -17px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.left-pane .mui-textfield {
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 17, 17);
+}
+
+.right-pane {
+  width: 70%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

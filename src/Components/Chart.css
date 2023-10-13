@@ -1,0 +1,69 @@
+.chart-wrapper {
+  height: 75%;
+  width: 100%;
+}
+
+.first-level-container,
+.second-level-container,
+.third-level-container {
+  min-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.valid-all-chart {
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.first-level-container,
+.second-level-container {
+  margin-bottom: 40px;
+}
+
+.active-draggable-cards-container,
+.draggable-cards-container,
+.cards-container {
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid rgb(255, 58, 58, 0.8);
+  border-radius: 20px;
+  padding: 0 5px 0 5px;
+  align-items: center;
+  transition: width 1s;
+}
+
+.active-draggable-cards-container {
+  animation: 0.1s ease-in 1 slideInFromLeft forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    width: 180px;
+    border-top: 1px solid rgb(255, 58, 58, 0.1);
+  }
+  50% {
+    width: 190px;
+    border-top: 1px solid rgb(255, 58, 58, 0.5);
+  }
+  100% {
+    width: 200px;
+    border-top: 3px solid rgb(255, 58, 58, 1);
+  }
+}
+
+.pointer-up::before {
+  content: "____";
+  position: relative;
+  top: -40px;
+  transform: rotate(90deg);
+  color: rgb(199, 199, 199);
+}
+
+.pointer-down::after {
+  content: "____";
+  position: relative;
+  transform: rotate(90deg);
+  color: rgb(199, 199, 199);
+}
