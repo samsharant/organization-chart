@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import Search from "../../Components/Search/Search";
 import Chart from "../../Components/Chart/Chart";
 import Lottie from "lottie-react";
-import loading from "../../LoadingAnimation.json";
+import loadingAnimation from "../../Assets/LoadingAnimation.json";
 
 //utility
 import { fetchChartData } from "../../Services/ChartDataService";
@@ -95,7 +95,7 @@ function OrgChart() {
             <Lottie
               style={{ height: "200px", width: "200px" }}
               loop
-              animationData={loading}
+              animationData={loadingAnimation}
             />
             <div className="fetching-data-text">Fetching Data...</div>
           </div>
