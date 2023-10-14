@@ -38,13 +38,20 @@ Go to the project directory
   cd organization-chart
 ```
 
-Install dependencies(for front-end)
+Install dependencies
 
 ```bash
   npm install or yarn install
 ```
 
-Run unit tests(for front-end)
+Run application
+
+```bash
+  npm run start
+
+```
+
+Run unit tests
 
 ```bash
   npm run test
