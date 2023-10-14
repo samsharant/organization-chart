@@ -35,14 +35,13 @@ Clone the project (via SSH)
 Go to the project directory
 
 ```bash
-  For front-end:
-  cd org-chart
+  cd organization-chart
 ```
 
 Install dependencies(for front-end)
 
 ```bash
-  npm install or yarn
+  npm install or yarn install
 ```
 
 Run unit tests(for front-end)
