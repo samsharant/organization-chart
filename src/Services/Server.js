@@ -1,5 +1,5 @@
 import { Model, createServer } from "miragejs";
-import mockData from "../MockData.json";
+import mockData from "./MockData.json";
 
 export const makeServer = () => {
   return createServer({

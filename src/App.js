@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import OrgChart from "./Pages/OrgChart";
+import OrgChart from "./Pages/OrgChart/OrgChart";
 import { fetchChartData } from "./Services/ChartDataService";
 import chartDataContext from "./Context/ChartDataContext";
 import { ToastContainer } from "react-toastify";

@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
-import ListItems from "../Components/ListItems";
-import mockData from "../MockData.json";
+import ListItems from "../Components/ListItems/ListItems";
+import mockData from "../Services/MockData.json";
 
 test("employee tile with valid name", () => {
   render(<ListItems data={mockData} />);

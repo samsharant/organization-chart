@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import FilterByTeam from "../Components/FilterByTeam";
+import FilterByTeam from "../Components/FilterByTeam/FilterByTeam";
 
 test("Filter dropdown has all 5 teams", async () => {
   render(<FilterByTeam team={"all"} handleChange={() => {}} />);

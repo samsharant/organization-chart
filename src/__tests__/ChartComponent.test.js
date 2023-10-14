@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Chart from "../Components/Chart";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import Chart from "../Components/Chart/Chart";
 
 test("Check the presence of chart layout", () => {
   render(

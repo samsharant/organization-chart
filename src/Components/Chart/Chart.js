@@ -1,8 +1,8 @@
 import "./Chart.css";
-import EmployeeCard from "./EmployeeCard";
-import DroppableContainer from "./DroppableContainer";
+import EmployeeCard from "../EmployeeCard/EmployeeCard";
+import DroppableContainer from "../DroppableContainer/DroppableContainer";
 import { useContext, useState } from "react";
-import chartDataContext from "../Context/ChartDataContext";
+import chartDataContext from "../../Context/ChartDataContext";
 
 function Chart({ teamToFilter }) {
   const { chartDataContextValue } = useContext(chartDataContext) || {

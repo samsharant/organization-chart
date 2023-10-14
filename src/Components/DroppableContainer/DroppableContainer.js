@@ -1,7 +1,7 @@
 import { useDrop } from "react-dnd";
-import EmployeeCard from "./EmployeeCard";
+import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import { useContext } from "react";
-import chartDataContext from "../Context/ChartDataContext";
+import chartDataContext from "../../Context/ChartDataContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 

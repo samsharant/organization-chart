@@ -1,11 +1,11 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import Search from "../Components/Search";
-import Chart from "../Components/Chart";
+import Search from "../../Components/Search/Search";
+import Chart from "../../Components/Chart/Chart";
 import Lottie from "lottie-react";
-import loading from "../LoadingAnimation.json";
+import loading from "../../LoadingAnimation.json";
 
 //utility
-import { fetchChartData } from "../Services/ChartDataService";
+import { fetchChartData } from "../../Services/ChartDataService";
 
 //style
 import "./OrgChart.css";
@@ -15,9 +15,9 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 //context
-import chartDataContext from "../Context/ChartDataContext";
-import FilterByTeam from "../Components/FilterByTeam";
-import ListItems from "../Components/ListItems";
+import chartDataContext from "../../Context/ChartDataContext";
+import FilterByTeam from "../../Components/FilterByTeam/FilterByTeam";
+import ListItems from "../../Components/ListItems/ListItems";
 
 function OrgChart() {
   const { chartDataContextValue } = useContext(chartDataContext);

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Search from "../Components/Search";
+import Search from "../Components/Search/Search";
 
 test("Render Search input field with a placeholder", () => {
   render(<Search filterOptions={{}} setFilterOptions={() => {}} />);
