@@ -14,7 +14,7 @@
 }
 
 .valid-all-chart {
-  border-bottom: 1px solid rgb(199, 199, 199);
+  border-bottom: 1px solid #999999;
 }
 
 .first-level-container,
@@ -59,12 +59,12 @@
   position: relative;
   top: -40px;
   transform: rotate(90deg);
-  color: rgb(199, 199, 199);
+  color: #999999;
 }
 
 .pointer-down::after {
   content: "____";
   position: relative;
   transform: rotate(90deg);
-  color: rgb(199, 199, 199);
+  color: #999999;
 }
