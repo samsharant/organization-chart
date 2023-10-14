@@ -50,7 +50,14 @@
   align-items: center;
 }
 
-.fetching-data-text {
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-screen .fetching-data-text {
   font-size: 14px;
   position: relative;
   top: -80px;

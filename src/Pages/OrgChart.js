@@ -18,7 +18,6 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import chartDataContext from "../Context/ChartDataContext";
 import FilterByTeam from "../Components/FilterByTeam";
 import ListItems from "../Components/ListItems";
-import { Backdrop, CircularProgress } from "@mui/material";
 
 function OrgChart() {
   const { chartDataContextValue } = useContext(chartDataContext);
@@ -85,25 +84,23 @@ function OrgChart() {
 
   return (
     <>
-      <Backdrop
-        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={!!!chartDataContextValue.length}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}>
-          <Lottie
-            style={{ height: "200px", width: "200px" }}
-            loop
-            animationData={loading}
-          />
-          <div className="fetching-data-text">Fetching Data...</div>
+      {!!!chartDataContextValue.length ? (
+        <div className="loading-screen">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}>
+            <Lottie
+              style={{ height: "200px", width: "200px" }}
+              loop
+              animationData={loading}
+            />
+            <div className="fetching-data-text">Fetching Data...</div>
+          </div>
         </div>
-      </Backdrop>
-
-      {!!chartDataContextValue?.length && (
+      ) : (
         <div className="page-wrapper">
           <div className="left-pane">
             {/* search option*/}
