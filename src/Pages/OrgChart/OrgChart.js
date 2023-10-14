@@ -87,19 +87,11 @@ function OrgChart() {
       {/* show a loading screen while fetching the data from server */}
       {!!!chartDataContextValue.length ? (
         <div className="loading-screen">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}>
-            <Lottie
-              style={{ height: "200px", width: "200px" }}
-              loop
-              animationData={loadingAnimation}
-            />
-            <div className="fetching-data-text">Fetching Data...</div>
-          </div>
+          <Lottie
+            style={{ height: "200px", width: "200px" }}
+            loop
+            animationData={loadingAnimation}
+          />
         </div>
       ) : (
         <div className="page-wrapper">
