@@ -71,7 +71,6 @@ function DroppableContainer({ manager, data, teamToFilter }) {
     <>
       {(teamToFilter === "all" || teamToFilter === team) && (
         <div
-          key={manager}
           ref={drop}
           className={`${
             isOver
@@ -80,9 +79,10 @@ function DroppableContainer({ manager, data, teamToFilter }) {
           } ${"pointer-up"}`}>
           {data.map((user) => {
             if (user.manager === manager) {
-              return <EmployeeCard user={user} isDraggable={true} />;
+              return (
+                <EmployeeCard key={user.id} user={user} isDraggable={true} />
+              );
             }
-            return <></>;
           })}
         </div>
       )}

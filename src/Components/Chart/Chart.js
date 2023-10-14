@@ -16,13 +16,13 @@ function Chart({ teamToFilter }) {
       if (!user.manager)
         return (
           <div
+            key={user.id}
             className={`cards-container ${
               teamToFilter !== "leadership" ? "pointer-down" : ""
             }`}>
             <EmployeeCard user={user} isDraggable={false} />
           </div>
         );
-      else return <></>;
     });
   };
 
@@ -34,11 +34,10 @@ function Chart({ teamToFilter }) {
         (teamToFilter === "all" || teamToFilter === user.team)
       )
         return (
-          <div className="cards-container pointer-up">
+          <div key={user.id} className="cards-container pointer-up">
             <EmployeeCard user={user} isDraggable={false} />
           </div>
         );
-      else return <></>;
     });
   };
 
@@ -47,6 +46,7 @@ function Chart({ teamToFilter }) {
     const managerIds = ["hf002", "hf003", "hf004"]; //managers
     return managerIds.map((manager) => (
       <DroppableContainer
+        key={manager}
         data={data}
         manager={manager}
         teamToFilter={teamToFilter}

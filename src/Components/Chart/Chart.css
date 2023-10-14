@@ -1,6 +1,7 @@
 .chart-wrapper {
   height: 75%;
   width: 100%;
+  padding: 10px 20px 0 10px;
 }
 
 .first-level-container,

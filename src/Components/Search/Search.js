@@ -22,7 +22,6 @@ function Search(props) {
             <AccountCircle />
           </InputAdornment>
         }
-        className="mui-textfield"
         value={filterOptions.searchInput}
         onChange={handleChange}
         margin="normal"
