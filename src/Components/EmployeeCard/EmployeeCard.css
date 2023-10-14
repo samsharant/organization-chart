@@ -25,6 +25,10 @@
   font-weight: 100;
 }
 
+.draggable-employee-card {
+  cursor: grab;
+}
+
 .dragging-card {
   opacity: 0.5;
 }

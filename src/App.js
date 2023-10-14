@@ -25,7 +25,7 @@ function App() {
     <chartDataContext.Provider
       value={{ chartDataContextValue, updateContextValue }}>
       <OrgChart />
-      <ToastContainer position="top-center" autoClose={500} />
+      <ToastContainer position="top-center" autoClose={1500} />
     </chartDataContext.Provider>
   );
 }

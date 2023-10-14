@@ -84,6 +84,7 @@ function OrgChart() {
 
   return (
     <>
+      {/* show a loading screen while fetching the data from server */}
       {!!!chartDataContextValue.length ? (
         <div className="loading-screen">
           <div

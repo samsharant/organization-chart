@@ -1,7 +1,7 @@
 import "./Chart.css";
+import { useContext, useState } from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import DroppableContainer from "../DroppableContainer/DroppableContainer";
-import { useContext, useState } from "react";
 import chartDataContext from "../../Context/ChartDataContext";
 
 function Chart({ teamToFilter }) {
@@ -10,6 +10,7 @@ function Chart({ teamToFilter }) {
   };
   const [data] = useState(chartDataContextValue);
 
+  // renders the chart's first level of cards (static)
   const renderL1Cards = () => {
     return data.map((user) => {
       if (!user.manager)
@@ -25,6 +26,7 @@ function Chart({ teamToFilter }) {
     });
   };
 
+  // renders the chart's second level of cards (static)
   const renderL2Cards = () => {
     return data.map((user) => {
       if (
@@ -40,9 +42,10 @@ function Chart({ teamToFilter }) {
     });
   };
 
+  //renders the chart's third level of cards - based on manager id
   const renderL3Cards = () => {
-    const teamsByManagerId = ["hf002", "hf003", "hf004"];
-    return teamsByManagerId.map((manager) => (
+    const managerIds = ["hf002", "hf003", "hf004"]; //managers
+    return managerIds.map((manager) => (
       <DroppableContainer
         data={data}
         manager={manager}

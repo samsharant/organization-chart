@@ -1,9 +1,18 @@
-import { useDrop } from "react-dnd";
-import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import { useContext } from "react";
+import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import chartDataContext from "../../Context/ChartDataContext";
+
+//axios
 import axios from "axios";
+
+//toastify
 import { toast } from "react-toastify";
+
+//react-dnd
+import { useDrop } from "react-dnd";
+import { makeStringCapitalize } from "../../Utility/utility";
+
+const toastStyle = { fontSize: "12px", height: "30px", width: "300px" };
 
 function DroppableContainer({ manager, data, teamToFilter }) {
   const team = data.find((employee) => employee.id === manager)?.team;
@@ -19,11 +28,13 @@ function DroppableContainer({ manager, data, teamToFilter }) {
     );
     const targetEmployee = updatedChartData[targetEmployeeIdx];
 
-    //do not updated if - item dropps in same team
-    if (targetEmployee.manager !== newManager)
-      updatedChartData[targetEmployeeIdx].manager = newManager;
+    //do not updated if - the item dropped in same team
+    if (targetEmployee.manager === newManager) return;
+
+    updatedChartData[targetEmployeeIdx].manager = newManager;
 
     updateContextValue(updatedChartData);
+
     axios
       .put(`/api/chartData/${targetEmployee.id}`, {
         ...targetEmployee,
@@ -33,7 +44,15 @@ function DroppableContainer({ manager, data, teamToFilter }) {
         // Handle the response
         if (response.status === 200) {
           //DB will be updated by this time
-          toast("SUCCESS [PUT] : 200", { type: "success" });
+          toast(
+            `Manager update for ${makeStringCapitalize(
+              targetEmployee.name,
+            )}: Success!`,
+            {
+              type: "success",
+              style: toastStyle,
+            },
+          );
         }
       });
   };
@@ -52,6 +71,7 @@ function DroppableContainer({ manager, data, teamToFilter }) {
     <>
       {(teamToFilter === "all" || teamToFilter === team) && (
         <div
+          key={manager}
           ref={drop}
           className={`${
             isOver
@@ -62,6 +82,7 @@ function DroppableContainer({ manager, data, teamToFilter }) {
             if (user.manager === manager) {
               return <EmployeeCard user={user} isDraggable={true} />;
             }
+            return <></>;
           })}
         </div>
       )}
