@@ -23,13 +23,13 @@ To run this project, you will need to add have
 Clone the project (via HTTP)
 
 ```bash
-  git clone --single-branch -b development https://github.com/samsharant/organization-chart.git
+  git clone https://github.com/samsharant/organization-chart.git
 ```
 
 Clone the project (via SSH)
 
 ```bash
-  git clone --single-branch -b development git@github.com:samsharant/organization-chart.git
+  git clone git@github.com:samsharant/organization-chart.git
 ```
 
 Go to the project directory
