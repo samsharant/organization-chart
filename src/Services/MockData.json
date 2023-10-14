@@ -15,7 +15,7 @@
   },
   {
     "id": "hf003",
-    "name": "aaron",
+    "name": "suresh",
     "designation": "Chief technology officer",
     "team": "product",
     "manager": "hf001"
@@ -37,14 +37,14 @@
   {
     "id": "hf006",
     "name": "helen",
-    "designation": "Intern",
+    "designation": "Content writer",
     "team": "business",
     "manager": "hf002"
   },
   {
     "id": "hf007",
     "name": "nikhil",
-    "designation": "UI/UX designer",
+    "designation": "Graphic designer",
     "team": "product",
     "manager": "hf003"
   },
