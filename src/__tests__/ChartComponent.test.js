@@ -3,11 +3,12 @@ import { render, screen } from "@testing-library/react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import Chart from "../Components/Chart/Chart";
+import { teams } from "../constants";
 
 test("Check the presence of chart layout", () => {
   render(
     <DndProvider backend={HTML5Backend}>
-      <Chart teamToFilter={"all"} />
+      <Chart teamToFilter={teams.all} />
     </DndProvider>,
   );
 
@@ -19,7 +20,7 @@ test("Check the presence of chart layout", () => {
 test("Check the presence of all three level containers", () => {
   render(
     <DndProvider backend={HTML5Backend}>
-      <Chart teamToFilter={"all"} />
+      <Chart teamToFilter={teams.all} />
     </DndProvider>,
   );
 

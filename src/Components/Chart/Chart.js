@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import DroppableContainer from "../DroppableContainer/DroppableContainer";
 import chartDataContext from "../../Context/ChartDataContext";
+import { leadership, managers, teams } from "../../constants";
 
 function Chart({ teamToFilter }) {
   const { chartDataContextValue } = useContext(chartDataContext) || {
@@ -18,7 +19,7 @@ function Chart({ teamToFilter }) {
           <div
             key={user.id}
             className={`cards-container ${
-              teamToFilter !== "leadership" ? "pointer-down" : ""
+              teamToFilter !== teams.leadership ? "pointer-down" : ""
             }`}>
             <EmployeeCard user={user} isDraggable={false} />
           </div>
@@ -30,8 +31,8 @@ function Chart({ teamToFilter }) {
   const renderL2Cards = () => {
     return data.map((user) => {
       if (
-        user.manager === "hf001" &&
-        (teamToFilter === "all" || teamToFilter === user.team)
+        user.manager === leadership.id &&
+        (teamToFilter === teams.all || teamToFilter === user.team)
       )
         return (
           <div key={user.id} className="cards-container pointer-up">
@@ -43,7 +44,7 @@ function Chart({ teamToFilter }) {
 
   //renders the chart's third level of cards - based on manager id
   const renderL3Cards = () => {
-    const managerIds = ["hf002", "hf003", "hf004"]; //managers
+    const managerIds = [managers.oneId, managers.twoId, managers.threeId]; //managers
     return managerIds.map((manager) => (
       <DroppableContainer
         key={manager}
@@ -59,7 +60,7 @@ function Chart({ teamToFilter }) {
       <div
         data-testid="first-level-container"
         className={`first-level-container ${
-          teamToFilter === "all" ? "valid-all-chart" : ""
+          teamToFilter === teams.all ? "valid-all-chart" : ""
         }`}>
         {renderL1Cards()}
       </div>

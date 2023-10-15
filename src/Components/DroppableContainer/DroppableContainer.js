@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import chartDataContext from "../../Context/ChartDataContext";
+import { teams } from "../../constants";
 
 //axios
 import axios from "axios";
@@ -69,7 +70,7 @@ function DroppableContainer({ manager, data, teamToFilter }) {
 
   return (
     <>
-      {(teamToFilter === "all" || teamToFilter === team) && (
+      {(teamToFilter === teams.all || teamToFilter === team) && (
         <div
           ref={drop}
           className={`${

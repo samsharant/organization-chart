@@ -3,6 +3,7 @@ import Search from "../../Components/Search/Search";
 import Chart from "../../Components/Chart/Chart";
 import Lottie from "lottie-react";
 import loadingAnimation from "../../Assets/LoadingAnimation.json";
+import { teams } from "../../constants";
 
 //utility
 import { fetchChartData } from "../../Services/ChartDataService";
@@ -25,7 +26,7 @@ function OrgChart() {
   const [chartData, setChartData] = useState(chartDataContextValue);
   const [filterOptions, setFilterOptions] = useState({
     searchInput: "",
-    filterByTeam: "all",
+    filterByTeam: teams.all,
   });
 
   const getChartData = async () => {
@@ -57,7 +58,7 @@ function OrgChart() {
   };
 
   useEffect(() => {
-    if (filterOptions.filterByTeam !== "all") {
+    if (filterOptions.filterByTeam !== teams.all) {
       let fileteredItems = chartDataContextValue.filter(
         (user) => user.team === filterOptions.filterByTeam,
       );

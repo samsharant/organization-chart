@@ -1,8 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import FilterByTeam from "../Components/FilterByTeam/FilterByTeam";
+import { teams } from "../constants";
 
 test("Filter dropdown has all 5 teams", async () => {
-  render(<FilterByTeam team={"all"} handleChange={() => {}} />);
+  render(<FilterByTeam team={teams.all} handleChange={() => {}} />);
   const selectDropdown = screen.getByRole("combobox");
   fireEvent.mouseDown(selectDropdown);
   const menuItems = screen.getAllByRole("option");
@@ -10,7 +11,7 @@ test("Filter dropdown has all 5 teams", async () => {
 });
 
 test("check options", async () => {
-  render(<FilterByTeam team={"all"} handleChange={() => {}} />);
+  render(<FilterByTeam team={teams.all} handleChange={() => {}} />);
   const selectDropdown = screen.getByRole("combobox");
   fireEvent.mouseDown(selectDropdown);
   const menuItems = screen.getAllByRole("option");
