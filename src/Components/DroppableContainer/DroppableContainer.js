@@ -79,7 +79,18 @@ function DroppableContainer({ manager, data, teamToFilter }) {
               : "draggable-cards-container"
           } ${"pointer-up"}`}>
           {data.map((user) => {
-            if (user.manager === manager) {
+            //when all (filter) selected
+            const showMembersBasedOnManagerIds =
+              teamToFilter === teams.all && user.manager === manager;
+
+            //when a specific team (filter) selected
+            const showAllTeamMembersRegardlessOfManagerIds =
+              user.team === teamToFilter && user.id !== manager;
+
+            if (
+              showMembersBasedOnManagerIds ||
+              showAllTeamMembersRegardlessOfManagerIds
+            ) {
               return (
                 <EmployeeCard key={user.id} user={user} isDraggable={true} />
               );
